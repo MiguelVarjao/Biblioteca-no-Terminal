@@ -20,6 +20,16 @@ public class Livro {
         return disponibilidade;
     }
 
+    public void emprestar () {
+
+        this.disponibilidade = false;
+    }
+
+    public void devolver () {
+
+        this.disponibilidade = true;
+    }
+
     public String getAutor() {
         return autor;
     }

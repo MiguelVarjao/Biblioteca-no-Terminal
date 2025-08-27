@@ -94,6 +94,7 @@ public class Biblioteca {
         System.out.println(biblioteca.livros);
     }
 
+
     public void operacoesUsuario (Scanner in, Biblioteca biblioteca) {
 
         System.out.println("Escolha oque fazer: ");
@@ -105,29 +106,52 @@ public class Biblioteca {
 
         switch (escolha) {
 
-            case 1 :
+            case 1 : {
 
                 boolean encontrou = false;
 
+
+                System.out.println("Digite o livro que quer pegar: ");
                 String livroEscolhido = in.nextLine();
 
 
                 for (Livro l : livros) {
-                    if (livroEscolhido == l) { // Descobrir como fazer a escolha
-                        System.out.println(l);
-                        encontrou = true;
+                    if (livroEscolhido.equalsIgnoreCase(livroEscolhido)) {
+                        if (l.isDisponibilidade()) {
 
+                            l.emprestar();
+                            System.out.println("Voçê pegou o Livro: " + l);
 
+                            // Fazer o sistema de verificação
+
+                        } else {
+
+                            System.out.println("O livro escolhido não está disponivel!");
+                        }
                     }
                 }
+
 
                 if (!encontrou) {
                     System.out.println("Nenhum livro disponível no momento.");
                 }
+            }
 
-            case 2 :
+            case 2 : {
 
-                // Fazer a devoluçao descobrir
+                System.out.println("Digite o Livro que vai devolver: ");
+                String livroEscolhido = in.nextLine();
+
+                for (Livro l : livros) {
+                    if (livroEscolhido.equalsIgnoreCase(livroEscolhido)) {
+                        if (l.isDisponibilidade()) {
+
+                            l.devolver();
+                            System.out.println("Voçê devolveu o livro: " + l);
+                        }
+                    }
+                }
+            }
 
 
         }
