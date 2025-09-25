@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Pessoa {
 
     private String nome;
+    private int id;
+
 
     public Pessoa (String nome) {
 
@@ -12,6 +14,10 @@ public class Pessoa {
 
     public String getNome() {
         return nome;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void cadastroUsuario (Scanner in) {

@@ -122,8 +122,6 @@ public class Biblioteca {
                             l.emprestar();
                             System.out.println("Voçê pegou o Livro: " + l);
 
-                            // Fazer o sistema de verificação
-
                         } else {
 
                             System.out.println("O livro escolhido não está disponivel!");
